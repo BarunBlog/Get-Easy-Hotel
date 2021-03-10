@@ -31,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 const  Hotels = () => {
+
+    const [searchTerm, setSearchTerm] = useState('');
     
     const hotel_list = [
         {
@@ -50,8 +52,13 @@ const  Hotels = () => {
     ]
 
     const handleChange = event => {
-        console.log(event.target.value);
+        setSearchTerm(event.target.value);
     };
+
+    const searchedHotels = hotel_list.filter(hotel => 
+        hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        hotel.location.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
 
     return (
@@ -59,7 +66,7 @@ const  Hotels = () => {
             <SearchComponent onSearch={handleChange}/>
 
 
-            <List hotel_list={hotel_list}/>
+            <List hotel_list={searchedHotels}/>
         </div>
     )
 }
@@ -84,17 +91,8 @@ const List = (props) =>
 
 
 const SearchComponent = props => {
-    const [searchTerm, setSearchTerm] = useState('');
-
 
     const classes = useStyles();
-
-
-    const handleChange = event => {
-        setSearchTerm(event.target.value);
-
-        props.onSearch(event);
-    };
     
     return (
 
@@ -120,7 +118,7 @@ const SearchComponent = props => {
                                     name="destination"
                                     autoFocus
                                     className={classes.text_field}
-                                    onChange={handleChange}
+                                    onChange={props.onSearch}
                                 />
                             </Grid>
                             
@@ -139,10 +137,6 @@ const SearchComponent = props => {
                     </form>
                 </div>
 
-                <hr/>
-                <p>
-                    Searching for <strong>{searchTerm}</strong>.
-                </p>
             </div>
         </div>
     

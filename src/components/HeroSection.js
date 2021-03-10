@@ -13,6 +13,7 @@ function HeroSection() {
 
             <div className="hero-btns">
                 <Button
+                    to='hotels'
                     className='btns'
                     buttonStyle='btn--outline'
                     buttonSize='btn--large'
@@ -21,6 +22,7 @@ function HeroSection() {
                 </Button>
 
                 <Button 
+                    to='sign-up'
                     className='btns'
                     buttonStyle='btn--primary'
                     buttonSize='btn--large'

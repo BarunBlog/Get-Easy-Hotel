@@ -1,32 +1,75 @@
 import React from 'react';
 
+import './Hotel.css';
+import '../../App.css';
+
 const Hotel = props => {
-    console.log(props.location.aboutProps);
+    if(props.location.aboutProps){
+      let hotel = props.location.aboutProps.name;
+      
 
-    return (
+      let arr = ["foo"];
+      return (
+          <>
+
+            <div className="hotel_container">
+                <div className="hotel_container_inner">
+                  <h3>{hotel.hotelName}</h3>
+
+                  {Array.prototype.push.apply(arr,  Array.from(Array(hotel.star-1).keys()) )}
+                  {arr.map((item, i) => 
+                      <p key={i} className="rating_p">{item.star} <i className="fas fa-star"></i></p>
+                  )}
+                  <br/>
+
+                  <hr/>
+
+                  <p className="address_p"><i className="fas fa-map-marker-alt map_icon"/> { hotel.address }</p>
+
+                  <div className="hotel_image_container">
+                    <div className="hotel_image_container1">
+                      <img className="hotel_image1" src={hotel.image1} alt="hotel chobi"/>
+                    </div>
+
+                    <div className="hotel_image_container2">
+                      <img className="hotel_image2" src={hotel.image2} alt="hotel chobi"/>
+                    </div>
+
+                    <div className="price">
+
+                      <div className="booking_price">
+                        <p className="price_p">${hotel.bookingPrice}</p>
+                      </div>
+                      
+                      <div class='booking_btn'>
+                        <button type="button" class="btn btn-success btn-lg">Book now</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div className="overView">
+
+                    <p className='overview_p'>{hotel.overView}.</p>
+                  </div>
+
+                 
+                </div>
+            </div>
+          </>
+      )
+    }
+    else{
+      return (
         <>
-           
-
-
-           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-    </div>
+          <div className="hotel_container">
+          <div className="hotel_container_inner">
+            <h2>Looks like you directly entered here</h2>
+          </div>
+          </div>
         </>
-    )
+      )
+    }
+    
 }
 
 export default Hotel;

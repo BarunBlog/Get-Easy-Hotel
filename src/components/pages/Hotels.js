@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GetHotelData from '../GetHotelData';
+import { Link } from 'react-router-dom';
 
 import '../../App.css';
 import './Hotels.css';
@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
 
 
 const  Hotels = () => {
-    let hotelData = [];
+
     const HotelData = [
         {
             hotelId: 1,
             hotelName: 'Richmond Hotel And Apartments',
-            star: 6.4,
+            star: 6,
             address: '10th Floor, Al Hamra Shopping City, Hazrat Shahjalal Road, Zindabazar, Sylhet',
             location: 'Sylhet, Bangladesh',
             image1: 'images/richmond1.jpg',
@@ -46,7 +46,7 @@ const  Hotels = () => {
         {
             hotelId: 2,
             hotelName: 'Noorjahan Hotel',
-            star: 9.0,
+            star: 8,
             address: 'Waves 1, Dargah Gate, Sylhet 3100',
             location: 'Sylhet, Bangladesh',
             image1: 'images/Noorjahan.jpg',
@@ -57,7 +57,7 @@ const  Hotels = () => {
         {
             hotelId: 3,
             hotelName: 'Rose View',
-            star: 7.1,
+            star: 7,
             address: 'Shahjalal Uposhohor Sylhet, 3100',
             location: 'Sylhet, Bangladesh',
             image1: 'images/hotel4.jpg',
@@ -69,7 +69,7 @@ const  Hotels = () => {
         {
             hotelId: 4,
             hotelName: 'Pan Pacific Sonargaon Dhaka Hotel',
-            star: 9.3,
+            star: 9,
             address: '107 Kazi Nazrul Islam Ave, Dhaka 1215',
             location: 'Dhaka, Bangladesh',
             image1: 'images/Sonargaon.jpg',
@@ -80,7 +80,7 @@ const  Hotels = () => {
         {
             hotelId: 5,
             hotelName: 'Intercontinental dhaka',
-            star: 8.6,
+            star: 9,
             address: 'G, 1 Minto Rd, Dhaka 1000',
             location: 'Dhaka, Bangladesh',
             image1: 'images/intercontinental.jpg',
@@ -99,11 +99,6 @@ const  Hotels = () => {
         localStorage.setItem('search', searchTerm);
     }, [searchTerm]);
 
-    
-    
-    const getHotelData = data => {
-        hotelData = data;
-    }
 
 
     const handleChange = event => {
@@ -111,7 +106,6 @@ const  Hotels = () => {
     };
 
     const handleSearchSubmit = event => {
-        <GetHotelData getData={getHotelData} />
 
         event.preventDefault();
     }
@@ -121,7 +115,7 @@ const  Hotels = () => {
         hotel.hotelName.toLowerCase().includes(searchTerm.toLowerCase()) || 
         hotel.location.toLowerCase().includes(searchTerm.toLowerCase())
     );
-//    console.log(searchedHotels);
+
 
 
     return (
@@ -136,23 +130,48 @@ const  Hotels = () => {
     
 
 
-const List = ({ hotel_list }) => (
+const List = ({ hotel_list }) => {
 
-    hotel_list.map(item => (
+    return (
+        
+        <div className="hotel_list_outer">
+            {hotel_list.map(item => (
+            <Link className='hotel_list_link' to={
+                {
+                    pathname: '/hotel',
+                    aboutProps: {
+                        name: item
+                    },
+                }}
+                key={item.hotelId}>
+                <div className="shadow p-3 mb-5 bg-white rounded">
+                    <div className='hotel_list'>
 
-          <div key={item.hotelId}>
-            
-            <span>{ item.hotelName }</span>
-            <span>{ item.address }</span>
-            <span>{ item.location }</span>
-            <span>{ item.star }</span>
-          </div>
+                        <div className='hotel_list_inner1'>
+                            <img className="hotel_list_inner1_img" src={item.image1} alt="hotel list"/>
+                        </div>
 
-      )
-      
-    )
-)
+                        <div className='hotel_list_inner2'>
+                            <h4>{ item.hotelName }</h4>
+                            <br/>
+                            
+                            <p className="rating_p">{item.star} <i className="fas fa-star"></i></p>
+                        
+                            <hr/>
+                            <p className="address_p"><i className="fas fa-map-marker-alt map_icon"/> { item.address }</p>
+                            <hr/>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </Link>
 
+            ))}
+        </div>
+        )
+}
 
 
 const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {

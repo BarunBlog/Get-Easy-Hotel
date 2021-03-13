@@ -1,33 +1,32 @@
- {/*<div className='hotels_container'>
-            <div className='hotel_search_container'>
-                <h1 className='hotels'>Find and book a great experience</h1>
-                <p>Discover more of your destination and make the most of your trip</p>
+import React from 'react';
 
-                <form method="get">
-                    <div className="form-inline has-search">
-                        <div className="form-group col-md-6">
-                            <span class="fas fa-map-marker-alt form-control-feedback"></span>
-                            <input name="q1" type="text" className="form-control" placeholder="Enter a hotel name or destination"/>
-                        </div>
-                        <button type="submit" className="btn btn-outline-primary">Search</button>
-                        
-                    
-                    </div>
-                </form>
-                
-                <FormControl className={classes.root}>
-                    
-                        <InputLabel htmlFor="my-input">Email address</InputLabel>
-                        <Input id="my-input" aria-describedby="my-helper-text" />
-                        <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+const Hotel = props => {
+    console.log(props.location.aboutProps);
 
-                </FormControl>
+    return (
+        <>
+           
 
 
-                
-                
-            </div>
-            
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+    </div>
+        </>
+    )
+}
 
-            <Footer />
-    </div>*/}
+export default Hotel;

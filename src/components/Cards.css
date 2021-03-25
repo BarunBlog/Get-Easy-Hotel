@@ -116,3 +116,37 @@
       margin-bottom: 2rem;
     }
   }
+
+  @media only screen and (max-width: 390px) {
+    .cards{
+      padding: 0rem;
+    }
+    .cards__container {
+      width:100%;
+    }
+  }
+
+  @media only screen and (max-width: 200px) {
+    .cards__item__pic-wrap::after {
+      display: none;
+    }
+  }
+
+  
+  @media only screen and (max-width: 240px) {
+    .cards__item__info{
+      padding: 3px 3px 3px;
+    }
+  }
+
+  @media only screen and (max-width: 196px) {
+    .cards__items{
+      width: 150px;
+    }
+  }
+
+  @media only screen and (max-width: 167px) {
+    .cards__items{
+      width: 130px;
+    }
+  }

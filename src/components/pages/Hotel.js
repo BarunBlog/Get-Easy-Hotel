@@ -41,8 +41,8 @@ const Hotel = props => {
                         <p className="price_p">${hotel.bookingPrice}</p>
                       </div>
                       
-                      <div class='booking_btn'>
-                        <button type="button" class="btn btn-success btn-lg">Book now</button>
+                      <div className='booking_btn'>
+                        <button type="button" className="btn btn-success btn-lg">Book now</button>
                       </div>
                     </div>
 

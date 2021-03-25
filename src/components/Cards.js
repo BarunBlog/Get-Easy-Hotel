@@ -60,7 +60,7 @@ function Cards() {
             <h1>Check out these Epic hotels.</h1>
             <div className='cards__container'>
                 <div className='cards__wrapper'>
-                    <ul className='cards__items'>
+                    <div className='cards__items'>
                         <Carditem 
                             src='images/Gritti_Palace.jpg'
                             text='The Gritti Palace is a sight to behold in itself'
@@ -75,9 +75,9 @@ function Cards() {
                             path='/hotel'
                             data = {HotelData[1]}
                         />
-                    </ul>
+                    </div>
 
-                    <ul className='cards__items'>
+                    <div className='cards__items'>
                         <Carditem 
                             src='images/san-francisco-restaurant-brasserie.jpg'
                             text='Discover different world in Mandarin Oriental'
@@ -92,7 +92,7 @@ function Cards() {
                             path='/hotel'
                             data = {HotelData[3]}
                         />
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

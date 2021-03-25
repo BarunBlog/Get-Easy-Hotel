@@ -38,14 +38,14 @@ function Navbar(){
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        <i className='fas fa-hotel'/>Get-Easy-Hotel
+                        <i className='fas fa-hotel hotel_icon'/><p className="Get-Easy-Hotel_p">Get-Easy-Hotel</p>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         {/* if click on the menu icon */}
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                     </div>
 
-                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <div className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className='nav-item'>
                             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                 Home
@@ -72,7 +72,7 @@ function Navbar(){
                             </li>
                         }
                         
-                    </ul>
+                    </div>
                     { button && <Button to='sign-up' buttonStyle='btn--outline'>SIGN UP</Button> }
                 </div>
             </nav>

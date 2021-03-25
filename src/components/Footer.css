@@ -51,6 +51,10 @@
     display: flex;
     justify-content: center;
   }
+
+  .footer-link-outer-wrapper{
+    display: flex;
+  }
   
   .footer-link-wrapper {
     display: flex;
@@ -116,9 +120,22 @@
   
   .social-icons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 240px;
+  }
+
+  .social-icons-inner1{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .social-icons-inner2{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   
   .social-logo {
@@ -160,5 +177,47 @@
     }
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 401px) {
+    .footer-link-outer-wrapper{
+      flex-direction: column;
+    }
+    .social-icons{
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 257px) {
+    .social-icons{
+      width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 220px) {
+    .social-icons{
+      width: 170px;
+    }
+  }
+
+  @media screen and (max-width: 210px) {
+    .footer-link-items{
+      width: 100px;
+    }
+  }
+
+  @media screen and (max-width: 190px) {
+    .social-icons, .footer-subscription{
+      width: 135px;
+    }
+  }
+
+  @media screen and (max-width: 161px) {
+    .footer-input{
+      width: 95.3%;
+    }
+  }
+  
+  @media screen and (max-width: 154px) {
+    .footer-subscription, .social-icons{
+      width: 130px;
+    }
   }

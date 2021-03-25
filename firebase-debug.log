@@ -1,0 +1,43 @@
+[debug] [2021-03-14T03:44:58.972Z] ----------------------------------------------------------------------
+[debug] [2021-03-14T03:44:58.980Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2021-03-14T03:44:58.981Z] CLI Version:   9.6.1
+[debug] [2021-03-14T03:44:58.981Z] Platform:      win32
+[debug] [2021-03-14T03:44:58.981Z] Node Version:  v12.19.0
+[debug] [2021-03-14T03:44:58.983Z] Time:          Sun Mar 14 2021 09:44:58 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-03-14T03:44:58.984Z] ----------------------------------------------------------------------
+[debug] [2021-03-14T03:44:58.985Z] 
+[debug] [2021-03-14T03:44:59.003Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-14T03:44:59.005Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\Barun\ReactJs\React Projects\get-easy-hotel
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using get-easy-hotel. 
+[debug] [2021-03-14T03:45:26.363Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/get-easy-hotel [none]
+[debug] [2021-03-14T03:45:27.007Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/get-easy-hotel 200
+[debug] [2021-03-14T03:45:27.008Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/get-easy-hotel {"projectId":"get-easy-hotel","projectNumber":"594685283448","displayName":"Get-Easy-Hotel","name":"projects/get-easy-hotel","resources":{"hostingSite":"get-easy-hotel"},"state":"ACTIVE"}
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

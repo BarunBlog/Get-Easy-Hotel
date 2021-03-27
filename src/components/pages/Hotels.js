@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../App.css';
@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
     submit: {
         margin: theme.spacing(2, 0, 0),
         height: '56px',
+    },
+    '@media (min-width: 780px)' : {
+    
+        
     },
 }));
 
@@ -201,14 +205,15 @@ const List = ({ hotel_list }) => {
                         </div>
 
                         <div className='hotel_list_inner2'>
-                            <h4>{ item.hotelName }</h4>
+                            <h3 className="hotel_name">{ item.hotelName }</h3>
                             <br/>
                             
                             <p className="rating_p">{item.star} <i className="fas fa-star"></i></p>
-                        
+                            <br/><br/>
                             <hr/>
+                            
                             <p className="address_p"><i className="fas fa-map-marker-alt map_icon"/> { item.address }</p>
-                            <hr/>
+                            
                             
                             
                             
@@ -226,6 +231,45 @@ const List = ({ hotel_list }) => {
 const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {
 
     const classes = useStyles();
+
+
+    const [size, setSize] = useState([0, 0]);
+
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize([window.innerWidth, window.innerHeight]);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+
+    let xsTextField, smTextField;
+    let xsButton, smButton;
+    let textFieldLabel;
+
+    if(size[0] >= 475){
+        textFieldLabel = "Enter a hotel name or destination"
+    }else{
+        textFieldLabel = "hotel or location"
+    }
+
+    if(size[0] >= 600) {
+        xsTextField = 12;
+        smTextField = 10;
+        xsButton = 12;
+        smButton = 2;
+    }
+    else if(size[0] < 600 && size[0] > 300){
+        xsTextField = 8;
+        smTextField = 6;
+        xsButton = 4;
+        smButton = 2;
+    }
+    else{
+        xsTextField = 12;
+        smTextField = 12;
+    }
     
     return (
 
@@ -239,7 +283,7 @@ const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {
                     
                     <form onSubmit={onSearchSubmit} className={classes.form} noValidate>
                         <Grid container spacing={1}>
-                            <Grid item xs={12} sm={10}>
+                            <Grid item xs={xsTextField} sm={smTextField}>
 
                             
                                 <TextField
@@ -247,7 +291,7 @@ const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {
                                     margin="normal"
                                     fullWidth
                                     id="destination"
-                                    label="Enter a hotel name or destination"
+                                    label={textFieldLabel}
                                     name="destination"
                                     autoFocus
                                     value={search}
@@ -255,8 +299,8 @@ const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {
                                     onChange={onSearch}
                                 />
                             </Grid>
-                            
-                            <Grid item xs={12} sm={2}>
+                            { size[0] > 300 &&
+                            <Grid item xs={xsButton} sm={smButton}>
                                 <Button
                                     type="submit"
                                     variant="contained"
@@ -266,8 +310,9 @@ const SearchComponent = ({ search, onSearch, onSearchSubmit }) => {
                                 >
                                     Search
                                 </Button>
-                            </Grid>
+                            </Grid>}
                         </Grid>
+                        <br/>
 
                     </form>
                 </div>

@@ -18,13 +18,15 @@ const Hotel = props => {
 
                   {Array.prototype.push.apply(arr,  Array.from(Array(hotel.star-1).keys()) )}
                   {arr.map((item, i) => 
-                      <p key={i} className="rating_p">{item.star} <i className="fas fa-star"></i></p>
+                      <p key={i} className="hotel_rating_p">{item.star} <i className="fas fa-star"></i></p>
                   )}
-                  <br/>
+                  <p className="hotel_rating_p_small"><i className="fas fa-star"></i></p>
+                  <br/><br/>
 
                   <hr/>
 
-                  <p className="address_p"><i className="fas fa-map-marker-alt map_icon"/> { hotel.address }</p>
+                  <p className="hotel_address_p"><i className="fas fa-map-marker-alt map_icon"/> { hotel.address }</p>
+                  <br/>
 
                   <div className="hotel_image_container">
                     <div className="hotel_image_container1">

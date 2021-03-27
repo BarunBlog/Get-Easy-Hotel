@@ -76,18 +76,26 @@
     transform: scale(1.1);
 }
 
-.rating_p{
+.hotel_rating_p{
     color: rgb(219, 165, 14);
     font-size: 17px;
     float: left;
 }
-.address_p{
+.hotel_address_p{
+    margin-top: 10px;
     color: rgb(19, 18, 18);
+}
+.hotel_rating_p_small{
+    color: rgb(219, 165, 14);
+    font-size: 17px;
+    float: left;
+    display: none;
 }
 
 .overView{
     width: 100%;
     height: auto;
+    margin-bottom: 20px;
 }
 .overview_p{
     font-size: 20px;
@@ -118,5 +126,20 @@
     .overView{
         width: 90%;
         height: auto;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .hotel_container_inner{
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 231px){
+    .hotel_rating_p{
+        display: none;
+    }
+    .hotel_rating_p_small{
+        display: inline;
     }
 }

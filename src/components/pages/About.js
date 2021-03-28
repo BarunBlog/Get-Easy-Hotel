@@ -18,13 +18,13 @@ export default function About() {
 
                     <div className="aboutContainer_inner2">
                         <p>When it comes to both our product and our organization, we are at the forefront of innovation. We are curious, enthusiastic and driven by the desire to exceed our users’ expectations.</p>
-                        <a href="/about-us">Read more about who we are</a>
-                        <br/>
+                        <a href="/about-us">Read more about who we are <i className="fas fa-long-arrow-alt-right"></i></a>
+                        <br/><br/>
                         <div className="col g-1of1 g2-3of4 g2-offset-1of4 p_cell no-padding-left no-padding-bottom class-facts">
                             <div className="row">
                                 <div className="col g-1of2 g1-1of4 g2-1of5 num-facts">
                                     <hr/>
-                                    <p>Hotels &amp; Alternative Accommodation</p>
+                                    <p>Hotels &amp; Alternative rooms</p>
                                     <span><p className="num-facts_p">5m+</p></span>
                                 </div>
                                 <div className="col g-1of2 g1-1of4 g2-1of5 num-facts">
@@ -39,9 +39,9 @@ export default function About() {
                             </div>
                         </div>
                         <br/>
-                        <h3>Our Culture and Values</h3>
-                        <p>At Get Easy Hotel, we’re a little unconventional. We are a team of entrepreneurs, powered by a shared passion to stay ahead of the game. We are a diverse, inquisitive and versatile team of 90 different nationalities, who come together to work towards one common goal.</p>
-                        <a href="/about-us">Learn more about our culture and values</a>
+                        <h2>Our Culture and Values</h2>
+                        <p>At Get Easy Hotel, we’re a little unusual. We are a team of traders, powered by a shared passion to stay ahead of the game. We are a diverse, inquisitive and versatile team of 90 different nationalities, who come together to work towards one common goal.</p>
+                        <a href="/about-us">Learn more about our culture and values <i className="fas fa-long-arrow-alt-right"></i></a>
             </div>
                     </div>
                 </div>

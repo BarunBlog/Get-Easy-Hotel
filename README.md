@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Getting Started with Get-Easy-Hotel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a hotel booking site like Trivago, Booking.com, etc, where users can search according to location or hotel name and book a room. It is a front-end-based project and was created using React.js, so there is no back-end in this project.
+
+This project is deployed in firebase. So you can visit live here [Get-Easy-Hotel](https://get-easy-hotel-2a999.web.app/)
+
 
 ## Available Scripts
 
